@@ -14,12 +14,19 @@ repositories {
 }
 
 dependencies {
+    //前端支持
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
+    //JDBC
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    // https://mvnrepository.com/artifact/com.h2database/h2 内置数据库
+    implementation 'com.h2database:h2:1.4.199'
+    //前端
     implementation 'com.squareup.okhttp3:mockwebserver:4.0.1'
-    
+    //数据格式
     implementation 'com.alibaba:fastjson:1.2.57'
-    
+    //mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
