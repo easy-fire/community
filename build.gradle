@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
+    id 'org.flywaydb.flyway' version "5.2.4"
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -9,11 +10,21 @@ group = 'life.majiang'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+
 repositories {
     mavenCentral()
 }
 
+flyway {
+    url = 'jdbc:h2:~/community'
+    user = 'qingyi'
+    password = 'qingyi'
+}
+
+
 dependencies {
+    //数据库工具 管理
+    implementation 'com.h2database:h2:1.4.197'
     //前端支持
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     //JDBC
@@ -30,3 +41,4 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
