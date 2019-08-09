@@ -76,7 +76,8 @@ public class QuestionService {
             question.setGmtModified(question.getGmtCreate());
             questionMapper.create(question);
         }else{
-            question.setGmtModified(question.getGmtCreate());
+
+            question.setGmtModified(System.currentTimeMillis());
             questionMapper.update(question);
         }
     }
