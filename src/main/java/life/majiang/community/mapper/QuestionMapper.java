@@ -1,7 +1,7 @@
 package life.majiang.community.mapper;
 
 
-import life.majiang.community.dto.QuestionDTO;
+
 import life.majiang.community.model.Question;
 import org.apache.ibatis.annotations.*;
 
