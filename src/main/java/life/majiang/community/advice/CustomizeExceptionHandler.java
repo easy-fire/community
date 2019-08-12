@@ -15,7 +15,7 @@ public class CustomizeExceptionHandler {
         if(ex instanceof CustomizeException){
             model.addAttribute("message",ex.getMessage());
         }else{
-            model.addAttribute("message","f=服务器错误");
+            model.addAttribute("message",ex.getMessage()+"记得改删=服务器错误");
         }
         return new ModelAndView("error");
     }
