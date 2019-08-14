@@ -88,9 +88,12 @@ public class QuestionService {
 
     public void incView(Integer id) {
         Question question = questionMapper.getById(id);
-        Question updateQuestion =new Question();
-        BeanUtils.copyProperties(question,updateQuestion);
-        updateQuestion.setViewCount(question.getViewCount()+1);
-        questionMapper.update(updateQuestion);
+        question.setViewCount(question.getViewCount()+1);
+        questionMapper.update(question);
+    }
+
+    public void incCommentCount(Question question) {
+        question.setCommentCount(question.getCommentCount()+1);
+        questionMapper.update(question);
     }
 }

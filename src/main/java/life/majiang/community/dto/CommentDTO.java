@@ -3,10 +3,10 @@ package life.majiang.community.dto;
 import life.majiang.community.model.User;
 
 public class CommentDTO {
-    private Long id;
-    private Long parentId;
+    private Integer id;
+    private Integer parentId;
     private Integer type;
-    private Long commentator;
+    private Integer commentator;
     private Long gmtCreate;
     private Long gmtModified;
     private Long likeCount;
@@ -14,19 +14,19 @@ public class CommentDTO {
     private String content;
     private User user;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
@@ -38,11 +38,11 @@ public class CommentDTO {
         this.type = type;
     }
 
-    public Long getCommentator() {
+    public Integer getCommentator() {
         return commentator;
     }
 
-    public void setCommentator(Long commentator) {
+    public void setCommentator(Integer commentator) {
         this.commentator = commentator;
     }
 
