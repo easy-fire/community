@@ -1,12 +1,16 @@
 package life.majiang.community.service;
 
+import life.majiang.community.dto.CommentDTO;
 import life.majiang.community.enums.CommentTypeEnum;
 import life.majiang.community.exception.CustomizeErrorCode;
 import life.majiang.community.exception.CustomizeException;
 import life.majiang.community.mapper.CommentMapper;
 import life.majiang.community.mapper.QuestionMapper;
+import life.majiang.community.mapper.UserMapper;
 import life.majiang.community.model.Comment;
 import life.majiang.community.model.Question;
+import life.majiang.community.model.User;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +23,9 @@ public class CommentService {
 
     @Autowired
     private CommentMapper commentMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
     private QuestionMapper questionMapper;
@@ -51,5 +58,18 @@ public class CommentService {
             commentMapper.insert(comment);
             questionService.incCommentCount(question);
         }
+    }
+
+    public List<CommentDTO> listByQuestionId(Integer id) {
+        List<Comment> comments =commentMapper.listByParentId(id);
+        List<CommentDTO> commentDTOS=new ArrayList<>();
+        for (Comment comment:comments){
+            CommentDTO commentDTO = new CommentDTO();
+            User user = userMapper.findById(comment.getCommentator());
+            BeanUtils.copyProperties(comment,commentDTO);
+            commentDTO.setUser(user);
+            commentDTOS.add(commentDTO);
+        }
+        return commentDTOS;
     }
 }
