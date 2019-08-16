@@ -1,8 +1,12 @@
 package life.majiang.community.dto;
 
 import life.majiang.community.model.User;
-
-
+/**
+ *@Author: easy-fire
+ *@Description : 问题详情封装
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class QuestionDTO {
     private Integer id;
     private String title;

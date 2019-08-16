@@ -14,7 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
+/**
+ *@Author: easy-fire
+ *@Description : 全局异常，处理会进入控制台的异常，处理json格式
+ *@Date: 2019/8/16  
+ *@Medified By:
+ */
 @ControllerAdvice
 public class CustomizeExceptionHandler {
 

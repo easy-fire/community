@@ -2,7 +2,12 @@ package life.majiang.community.dto;
 
 import life.majiang.community.exception.CustomizeErrorCode;
 import life.majiang.community.exception.CustomizeException;
-
+/**
+ *@Author: easy-fire
+ *@Description : 返回json信息封装
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class ResultDTO {
     private Integer code;
     private String message;

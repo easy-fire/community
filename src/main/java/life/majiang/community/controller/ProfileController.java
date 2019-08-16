@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ *@Author: easy-fire
+ *@Description : 下拉框页面跳转相关接口
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 @Controller
 public class ProfileController {
 
@@ -20,6 +26,14 @@ public class ProfileController {
     @Autowired
     private QuestionService questionService;
 
+    /**
+     * @author : easy-fire
+     * @Desicription :个人相关分类跳转接口
+     * @param action:对应页面
+     * @date : 2019/8/16  11:01
+     * @return :
+     * @modified By:
+     */
     @GetMapping("/profile/{action}")
     public String profile(HttpServletRequest request,
                           @PathVariable(name = "action")String action, Model model,

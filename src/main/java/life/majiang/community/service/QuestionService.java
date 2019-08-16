@@ -14,7 +14,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *@Author: easy-fire
+ *@Description : 问题相关服务
+ *@Date: 2019/8/16  
+ *@Medified By:
+ */
 @Service
 public class QuestionService {
 
@@ -23,6 +28,15 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * @author : easy-fire
+     * @Desicription :分页查询所有问题，封装到PageDTO类中
+     * @param page:指定页数
+     * @param size:显示条数
+     * @date : 2019/8/16  8:56
+     * @return :
+     * @modified By:
+     */
     public PageDTO list(Integer page, Integer size) {
         PageDTO pageDTO = new PageDTO();
         Integer count = questionMapper.count();
@@ -42,7 +56,16 @@ public class QuestionService {
         pageDTO.setQuestions(questionDTOList);
         return pageDTO;
     }
-
+    /**
+     * @author : easy-fire
+     * @Desicription :分页查询某人的所有问题信息
+     * @param userId:被查询人id
+     * @param page:所在页码
+     * @param size:每页条数
+     * @date : 2019/8/16  8:59
+     * @return :
+     * @modified By:
+     */
     public PageDTO list(Integer userId, Integer page, Integer size) {
         PageDTO pageDTO = new PageDTO();
         Integer count = questionMapper.countByUserId(userId);
@@ -63,6 +86,14 @@ public class QuestionService {
         return pageDTO;
     }
 
+    /**
+     * @author : easy-fire
+     * @Desicription :
+     * @param : 
+     * @date : 2019/8/16  9:03
+     * @return : 
+     * @modified By:
+     */
     public QuestionDTO getById(Integer id) {
         Question question = questionMapper.getById(id);
         if(question == null){

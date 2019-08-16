@@ -1,5 +1,10 @@
 package life.majiang.community.dto;
-
+/**
+ *@Author: easy-fire
+ *@Description : GitHub传入值对象封装类
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class AccessTokenDto {
     private String client_id;
     private String client_secret;

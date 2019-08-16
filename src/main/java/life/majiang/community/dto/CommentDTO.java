@@ -1,7 +1,12 @@
 package life.majiang.community.dto;
 
 import life.majiang.community.model.User;
-
+/**
+ *@Author: easy-fire
+ *@Description : 问题评论信息封装类
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class CommentDTO {
     private Integer id;
     private Integer parentId;

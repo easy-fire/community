@@ -12,12 +12,26 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ *@Author: easy-fire
+ *@Description : 提交/修改 问题相关
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 @Controller
 public class PublishController {
 
     @Autowired
     private QuestionService questionService;
 
+    /**
+     * @author : easy-fire
+     * @Desicription :修改问题-回显机制
+     * @param : 
+     * @date : 2019/8/16  11:12
+     * @return : 
+     * @modified By:
+     */
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name = "id")Integer id,
                        Model model){
@@ -34,8 +48,14 @@ public class PublishController {
         return "publish";
     }
 
-
-
+    /**
+     * @author : easy-fire
+     * @Desicription :提交问题页面
+     * @param :
+     * @date : 2019/8/16  11:18
+     * @return :
+     * @modified By:
+     */
     @PostMapping("/publish")
     public String dbPublish(
             @RequestParam("title")String title,

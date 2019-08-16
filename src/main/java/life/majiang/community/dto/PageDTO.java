@@ -2,7 +2,12 @@ package life.majiang.community.dto;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *@Author: easy-fire
+ *@Description : 首页页面显示信息封装
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class PageDTO {
     private List<QuestionDTO> questions;
     private boolean hasPrevious;

@@ -11,6 +11,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *@Author: easy-fire
+ *@Description : 验证登录拦截器
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 @Service
 public class SessionInterceptor implements HandlerInterceptor {
 

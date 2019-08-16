@@ -1,6 +1,11 @@
 package life.majiang.community.dto;
 
-
+/**
+ *@Author: easy-fire
+ *@Description : GitHub返回数据
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 public class GithubUser {
 
     private String name;

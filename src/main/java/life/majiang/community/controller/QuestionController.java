@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-
+/**
+ *@Author: easy-fire
+ *@Description : 问题接口相关
+ *@Date: 2019/8/16
+ *@Medified By:
+ */
 @Controller
 public class QuestionController {
 
@@ -22,6 +27,14 @@ public class QuestionController {
     @Autowired
     private CommentService commentService;
 
+    /**
+     * @author : easy-fire
+     * @Desicription :问题详情
+     * @param :
+     * @date : 2019/8/16  11:20
+     * @return :
+     * @modified By:
+     */
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id")Integer id,
                            Model model){

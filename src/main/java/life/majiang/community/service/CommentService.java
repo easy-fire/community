@@ -34,7 +34,9 @@ public class CommentService {
     private QuestionService questionService;
 
     @Transactional
-    public void insert(Comment comment) {
+    public void insert(CommentDTO commentDTO) {
+        Comment comment = new Comment();
+        BeanUtils.copyProperties(commentDTO,comment);
         if (comment.getParentId() == null || comment.getParentId() ==0){
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
